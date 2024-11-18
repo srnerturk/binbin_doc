@@ -187,6 +187,19 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;AuthToken?&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>AuthTokenModel</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+"verified": true,
+"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+                                            </code></pre>
+                                        </div>
                                         
                                         <h5>Örnek Başarılı Yanıt</h5>
                                         <div class="code-block response-success">
@@ -232,6 +245,19 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;RegisterResponse&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>RegisterResponseModel</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "isSuccess": true,
+    "message": "Kayıt başarılı",
+    "isSms": true
+    }
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -260,9 +286,37 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>socialLoginRequestModel</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "signinMethod": 1,
+    "idToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "email": "ornek@email.com"
+    }
+                                            </code></pre>
+                                        </div>
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;AuthToken?&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>AuthTokenModel</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+"verified": true,
+"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+                                            </code></pre>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -294,6 +348,17 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;RegisterCompleteResponseModel&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>RegisterCompleteResponseModel</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "value": "SUCCESS_1000"
+}
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -331,6 +396,19 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>GeneralResponse</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "value": "",
+    "message": "İşlem başarılı",
+    "isUpdateRequired": "true"
+    }
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -350,6 +428,19 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>GeneralResponse</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "value": "",
+    "message": "İşlem başarılı",
+    "isUpdateRequired": "true"
+    }
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -381,6 +472,19 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;SmsResendResponse&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>SmsResendResponse</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "value": "SMS gönderildi",
+    "isSms": true,
+    "errorCode": ""
+    }
+                                            </code></pre>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -458,6 +562,70 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;List&lt;BinPassResponseModel&gt;&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>BinPassResponseModel</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "aktifPaketMi": "boolean?",
+    "kayitId": "integer?",
+    "baslik_TR": "string?",
+    "aciklama_TR": "string?",
+    "detaylar_TR": "string?",
+    "baslik_EN": "string?",
+    "aciklama_EN": "string?",
+    "detaylar_EN": "string?",
+    "baslik_BG": "string?",
+    "aciklama_BG": "string?",
+    "detaylar_BG": "string?",
+    "baslik_BS": "string?",
+    "aciklama_BS": "string?",
+    "detaylar_BS": "string?",
+    "baslik_RU": "string?",
+    "baslik_MK": "string?",
+    "baslik_ARN": "string?",
+    "aciklama_RU": "string?",
+    "aciklama_MK": "string?",
+    "aciklama_ARN": "string?",
+    "detaylar_RU": "string?",
+    "detaylar_MK": "string?",
+    "detaylar_ARN": "string?",
+    "baslik_NL": "string?",
+    "aciklama_NL": "string?",
+    "detaylar_NL": "string?",
+    "baslik_ES": "string?",
+    "aciklama_ES": "string?",
+    "detaylar_ES": "string?",
+    "baslik_CA": "string?",
+    "aciklama_CA": "string?",
+    "detaylar_CA": "string?",
+    "yinelenenMi": "boolean?",
+    "tutar": "string?",
+    "paketIndirimsizTutar": "string?",
+    "paketIndirimOrani": "integer?",
+    "maxSurusSayisi": "integer",
+    "maxDakika": "integer",
+    "tekSeferdeSurusDakikaSiniri": "integer",
+    "kacGunluk": "integer?",
+    "fotoURL": "string?",
+    "aP_BaslangicTarihSaat": "string?",
+    "aP_BitisTarihSaat": "string?",
+    "aP_AbonelikIptalMi": "boolean?",
+    "aP_Tur": "string?",
+    "aP_ToplamGunDakika": "integer?",
+    "aP_KalanGunDakika": "integer",
+    "aP_TurGunKalanDakika": "integer?",
+    "aP_KalanSurusSayisi": "integer?",
+    "aP_BitisGosterilecekMi": "boolean?",
+    "sigortaliMi": "boolean?",
+    "acilisUcretiYuzdelikIndirim": "integer",
+    "satinAlinabilirMi": "boolean?"
+}
+                                            </code></pre>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -508,6 +676,26 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;RideStartResponse&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>RideStartResponse</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+                                          {
+                                              "isSuccess": "boolean?",
+                                              "errorType": "string?",
+                                              "errorMessage": "string?",
+                                              "kilitTuru": "string?",
+                                              "kilitKodu": "string?",
+                                              "uyariMetni": "string?",
+                                              "ulke": "string?",
+                                              "baslangicBolgeAdi": "string?",
+                                              "baslangicAltBolgeAdi": "string?"
+                                              }
+                                          </code></pre>
+                                          </div>
+                                          
                                     </div>
                                 </div>
                             </div>
