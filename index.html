@@ -14,7 +14,102 @@
     
     <!-- Custom CSS -->
     <style>
-   
+        :root {
+            --primary-color: #0468d7;
+            --secondary-color: #2d3748;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .method-tag {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .method-get { background-color: #61affe33; color: #61affe; }
+        .method-post { background-color: #49cc9033; color: #49cc90; }
+        .method-put { background-color: #fca13033; color: #fca130; }
+        .method-delete { background-color: #f93e3e33; color: #f93e3e; }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+        }
+
+        .code-block {
+            background-color: #2d3748;
+            border-radius: 8px;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .code-header {
+            background-color: #1a202c;
+            padding: 8px 15px;
+            border-radius: 8px 8px 0 0;
+            color: #fff;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-button {
+            background: transparent;
+            border: 1px solid #4a5568;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-button:hover {
+            background: #4a5568;
+        }
+
+        .parameter-table {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .parameter-table th {
+            background-color: #f1f5f9;
+        }
+
+        .required-badge {
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .optional-badge {
+            background-color: #6b7280;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .response-success {
+            border-left: 4px solid #49cc90;
+        }
+
+        .response-error {
+            border-left: 4px solid #f93e3e;
+        }
     </style>
 </head>
 <body>
@@ -2755,108 +2850,6 @@ final requiredFields = await settingsApi.getRegistrationRequiredFields();
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- World API -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#worldApiSection">
-                        <span class="fw-bold">World API</span>
-                        <span class="ms-2 text-muted">lib/data/network/apis/world_api.dart</span>
-                    </button>
-                </h2>
-                <div id="worldApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                    <div class="accordion-body">
-                        <div class="alert alert-info mb-3">
-                            <i class="bi bi-info-circle me-2"></i>
-                            Bu API, coğrafi bölge verilerini ve tenant-spesifik dünya verilerini yönetir.
-                        </div>
-
-                        <div class="accordion" id="worldMethodsAccordion">
-                            
-                            <!-- World Data Methods -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#worldDataMethods">
-                                        <span class="method-tag method-get">GET</span>
-                                        <span class="fw-bold">Dünya Veri Metodları</span>
-                                    </button>
-                                </h2>
-                                <div id="worldDataMethods" class="accordion-collapse collapse" data-bs-parent="#worldMethodsAccordion">
-                                    <div class="accordion-body">
-                                        <h5>getWorldData()</h5>
-                                        <p>Binbin tenant'ı için dünya verilerini getirir.</p>
-                                        <code>Future&lt;Properties?&gt;</code>
-                                        <div class="alert alert-warning mt-2">
-                                            <i class="bi bi-exclamation-triangle me-2"></i>
-                                            Hata durumunda:
-                                            <ul class="mb-0">
-                                                <li><code>LogNameConstants.worldDataFail</code> loglanır</li>
-                                                <li>Varsayılan veriler (<code>worldData.json</code>) kullanılır</li>
-                                            </ul>
-                                        </div>
-
-                                        <h5 class="mt-4">getGosharingWorldData()</h5>
-                                        <p>GoSharing tenant'ı için dünya verilerini getirir.</p>
-                                        <code>Future&lt;Properties?&gt;</code>
-                                        <div class="alert alert-warning mt-2">
-                                            <i class="bi bi-exclamation-triangle me-2"></i>
-                                            Hata durumunda:
-                                            <ul class="mb-0">
-                                                <li><code>LogNameConstants.worldDataFail</code> loglanır</li>
-                                                <li>Varsayılan veriler (<code>goSharingWorldData.json</code>) kullanılır</li>
-                                            </ul>
-                                        </div>
-
-                                        <h5 class="mt-4">getDefaultData()</h5>
-                                        <p>Tenant'a göre varsayılan verileri yerel dosyadan yükler.</p>
-                                        <code>Future&lt;Properties&gt;</code>
-                                        <div class="alert alert-info mt-2">
-                                            <i class="bi bi-info-circle me-2"></i>
-                                            Tenant'a göre farklı dosyalar kullanılır:
-                                            <ul class="mb-0">
-                                                <li>Binbin: <code>assets/worldData.json</code></li>
-                                                <li>GoSharing: <code>assets/goSharingWorldData.json</code></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Example Usage -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#worldExampleUsage">
-                                        <span class="fw-bold">Örnek Kullanım</span>
-                                    </button>
-                                </h2>
-                                <div id="worldExampleUsage" class="accordion-collapse collapse" data-bs-parent="#worldMethodsAccordion">
-                                    <div class="accordion-body">
-                                        <div class="code-block">
-                                            <div class="code-header">
-                                                <span>Dart</span>
-                                                <button class="copy-button">Kopyala</button>
-                                            </div>
-                                            <pre><code class="language-dart">
-final worldApi = WorldApi();
-
-// Tenant'a göre dünya verilerini getir
-final Properties? worldData;
-if (RunTimeUtils.headerTenant == RuntimeTenant.binbin) {
-    worldData = await worldApi.getWorldData();
-} else {
-    worldData = await worldApi.getGosharingWorldData();
-}
-
-// Hata durumunda varsayılan verileri kullan
-if (worldData == null) {
-    worldData = await worldApi.getDefaultData();
-}
-                                </code></pre>
-                            </div>
                         </div>
                     </div>
                 </div>
