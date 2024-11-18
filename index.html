@@ -875,6 +875,22 @@
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;List&lt;CampaignsResponseModel&gt;&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>CampaignsResponseModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "kampanyaId": "integer?",
+    "kampanyaAdi": "string?",
+    "aciklama": "string?",
+    "fotoURL": "string?",
+    "referansMi": "boolean?"
+}
+                                          </code></pre>
+                                          </div>
+                                          
 
                                         <h5>Örnek Kullanım</h5>
                                         <div class="code-block">
@@ -917,6 +933,22 @@ final campaigns = await CampaignsApi().getCampaigns();
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;CampaignsDeatilResponseModel&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>CampaignsDeatilResponseModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "kampanyaId": 1234,
+    "kampanyaAdi": "Yaz Kampanyası",
+    "aciklama": "İlk sürüşünüzde %50 indirim",
+    "fotoURL": "https://example.com/kampanya.jpg",
+    "kosullar": "Bu kampanya sadece yeni kullanıcılar için geçerlidir. 31 Ağustos 2024 tarihine kadar geçerlidir."
+}
+                                          </code></pre>
+                                          </div>
+                                          
 
                                         <h5>Örnek Kullanım</h5>
                                         <div class="code-block">
