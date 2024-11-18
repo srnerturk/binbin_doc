@@ -1173,6 +1173,24 @@ final campaignDetail = await CampaignsApi().getCampaignsDetail(123);
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;List&lt;Country&gt;&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>CountryModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "bayrakURL": "https://example.com/flags/tr.png",
+    "ulkeAdiTurkce": "Türkiye",
+    "ulkeAdi": "Turkey",
+    "telefonKodu": 90,
+    "ulkeKodu2Hane": "TR",
+    "ulkeKodu3Hane": "TUR",
+    "telefonNoFormat": "(###) ### ## ##"
+}
+                                          </code></pre>
+                                          </div>
+                                          
 
                                         <h5>Not</h5>
                                         <div class="alert alert-info">
@@ -1195,31 +1213,6 @@ for (var country in countries) {
     print(country.name);
     print(country.flag);
 }
-                                            </code></pre>
-                                        </div>
-
-                                        <h5>Örnek Yanıt</h5>
-                                        <div class="code-block response-success">
-                                            <div class="code-header">
-                                                <span>JSON</span>
-                                                <button class="copy-button">Kopyala</button>
-                                            </div>
-                                            <pre><code class="language-json">
-[
-    {
-        "name": "Turkey",
-        "code": "TR",
-        "flag": "🇹🇷",
-        "phoneCode": "+90"
-    },
-    {
-        "name": "Azerbaijan",
-        "code": "AZ",
-        "flag": "🇦🇿",
-        "phoneCode": "+994"
-    }
-    // ... diğer ülkeler
-]
                                             </code></pre>
                                         </div>
                                     </div>
@@ -1267,6 +1260,33 @@ for (var country in countries) {
                                                 </tr>
                                             </tbody>
                                         </table>
+
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>CardVerificationModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "userId": 12345,
+    "paymentResultUrl": "https://payment.example.com/result",
+    "type": "VERIFICATION",
+    "amount": 1.00,
+    "providerUrl": "https://provider.example.com",
+    "packageId": 789,
+    "card": {
+        "cardId": 456,
+        "cardName": "John Doe",
+        "cardNumber": "411111******1111",
+        "cardType": "CREDIT",
+        "cardSubType": "VISA",
+        "bankName": "Example Bank",
+        "isDefault": true
+    }
+}
+                                          </code></pre>
+                                          </div>
+                                          
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;String&gt;</code></p>
@@ -1286,6 +1306,29 @@ for (var country in countries) {
                                     <div class="accordion-body">
                                         <h5>Açıklama</h5>
                                         <p>Yeni kredi kartı ekleme işlemini gerçekleştirir.</p>
+
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>AddCardRequestModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "kkAdiSoyadi": "John Doe",
+    "kkNo": "4111111111111111",
+    "kksktAy": "12",
+    "kksktYil": "25",
+    "kkcvc": "123",
+    "encryptedCard": {
+        "encryptedCardNumber": "8A7B6C5D4E3F2G1H",
+        "encryptedExpiryMonth": "X9Y8Z7",
+        "encryptedExpiryYear": "A1B2C3",
+        "encryptedCvc": "P7Q8R9"
+    }
+}
+                                          </code></pre>
+                                          </div>
+                                          
                                         
                                         <h5>Parametreler</h5>
                                         <table class="table table-bordered parameter-table">
@@ -1301,6 +1344,25 @@ for (var country in countries) {
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;AddCardResponse&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>AddCardResponseModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "sonuc": "true",
+    "hataMesaji": "",
+    "basariliPopupTuru": "SUCCESS",
+    "basariliPopupMesaj": "Kartınız başarıyla eklendi",
+    "cardType": "CREDIT",
+    "cardSubType": "VISA",
+    "bankName": "Garanti BBVA",
+    "hataKodu": ""
+}
+                                          </code></pre>
+                                          </div>
+                                          
 
                                         <h5>Hata Yönetimi</h5>
                                         <div class="alert alert-warning">
