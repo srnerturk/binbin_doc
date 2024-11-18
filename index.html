@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter API Dokümantasyonu</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Prism CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+   
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4">API Dokümantasyonu</h1>
+
+        <!-- Ana Accordion -->
+        <div class="accordion" id="mainAccordion">
+            
+            <!-- Auth API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#authApiSection">
+                        <span class="fw-bold">Auth API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/auth.dart</span>
+                    </button>
+                </h2>
+                <div id="authApiSection" class="accordion-collapse collapse show" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="authMethodsAccordion">
+                            <!-- Logout -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#logoutMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">logout()</span>
+                                    </button>
+                                </h2>
+                                <div id="logoutMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kullanıcının oturumunu sonlandırır ve ilgili verileri temizler.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Parametre</th>
+                                                    <th>Tip</th>
+                                                    <th>Durum</th>
+                                                    <th>Açıklama</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>reason</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Çıkış yapma sebebi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sessionDrop</code></td>
+                                                    <td><code>bool</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Oturum düşürme durumu (varsayılan: false)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Refresh Token -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#refreshTokenMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">refreshToken()</span>
+                                    </button>
+                                </h2>
+                                <div id="refreshTokenMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Access token'ı yenilemek için kullanılır.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;AuthToken?&gt;</code></p>
+                                        
+                                        <h5>Örnek Başarılı Yanıt</h5>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>JSON</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "accessToken": "new_access_token",
+    "refreshToken": "new_refresh_token"
+}
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Register -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#registerMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">register()</span>
+                                    </button>
+                                </h2>
+                                <div id="registerMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Yeni kullanıcı kaydı oluşturur.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>isSMS</code></td>
+                                                    <td><code>bool</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>SMS doğrulaması kullanılıp kullanılmayacağı</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;RegisterResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Login -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#socialLoginMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">socialLogin()</span>
+                                    </button>
+                                </h2>
+                                <div id="socialLoginMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Sosyal medya hesabı ile giriş yapmayı sağlar.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>socialLoginRequestModel</code></td>
+                                                    <td><code>SocialLoginRequestModel</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Sosyal giriş bilgilerini içeren model</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;AuthToken?&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Register Complete -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#registerCompleteMethod">
+                                        <span class="method-tag method-put">PUT</span>
+                                        <span class="fw-bold">registerComplete()</span>
+                                    </button>
+                                </h2>
+                                <div id="registerCompleteMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kayıt işlemini tamamlar.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>isSkip</code></td>
+                                                    <td><code>bool</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Kayıt adımının atlanıp atlanmayacağını belirtir</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;RegisterCompleteResponseModel&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Register Complete Verification -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#registerCompleteVerificationMethod">
+                                        <span class="method-tag method-put">PUT</span>
+                                        <span class="fw-bold">registerCompleteVerification()</span>
+                                    </button>
+                                </h2>
+                                <div id="registerCompleteVerificationMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kimlik doğrulama sürecini tamamlar.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>idCardPhoto</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Kimlik fotoğrafı</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>selfie</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Selfie fotoğrafı</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Foreign Register Complete -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#foreignRegisterCompleteMethod">
+                                        <span class="method-tag method-put">PUT</span>
+                                        <span class="fw-bold">foreignRegisterComplete()</span>
+                                    </button>
+                                </h2>
+                                <div id="foreignRegisterCompleteMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Yabancı kullanıcı kaydını tamamlar.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SMS Resend -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#smsResendMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">smsResend()</span>
+                                    </button>
+                                </h2>
+                                <div id="smsResendMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>SMS kodunu yeniden gönderir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>isSms</code></td>
+                                                    <td><code>bool</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>SMS ile gönderim yapılıp yapılmayacağı</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;SmsResendResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SMS Verify -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#smsVerifyMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">smsVerify()</span>
+                                    </button>
+                                </h2>
+                                <div id="smsVerifyMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>SMS doğrulama kodunu kontrol eder.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;AuthToken?&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Generate JWT Token -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generateJwtTokenMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">generateJwtToken()</span>
+                                    </button>
+                                </h2>
+                                <div id="generateJwtTokenMethod" class="accordion-collapse collapse" data-bs-parent="#authMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Güvenli JWT token oluşturur.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;void&gt;</code></p>
+                                        
+                                        <h5>Not</h5>
+                                        <p>Token, DataUtils.secureJwtToken içinde saklanır ve DataUtils.generatedJwtTokenExpMinute süresince geçerlidir.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BinPass API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#binPassApiSection">
+                        <span class="fw-bold">BinPass API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/bin_pass.dart</span>
+                    </button>
+                </h2>
+                <div id="binPassApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="binPassMethodsAccordion">
+                            
+                            <!-- getPasses Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getPassesMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getPasses()</span>
+                                    </button>
+                                </h2>
+                                <div id="getPassesMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Mevcut BinPass paketlerini listeler.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;BinPassResponseModel&gt;&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- getUserPasses Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getUserPassesMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getUserPasses()</span>
+                                    </button>
+                                </h2>
+                                <div id="getUserPassesMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kullanıcının sahip olduğu BinPass paketlerini listeler.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;BinPassResponseModel&gt;&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- buyBinPass Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buyBinPassMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">buyBinPass()</span>
+                                    </button>
+                                </h2>
+                                <div id="buyBinPassMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>BinPass paketi satın alma işlemini gerçekleştirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>packageId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Satın alınacak paketin ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;RideStartResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- cancelBinPass Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cancelBinPassMethod">
+                                        <span class="method-tag method-put">PUT</span>
+                                        <span class="fw-bold">cancelBinPass()</span>
+                                    </button>
+                                </h2>
+                                <div id="cancelBinPassMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>BinPass paketini iptal eder.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>packageId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>İptal edilecek paketin ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;bool&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- getPass Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getPassMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getPass()</span>
+                                    </button>
+                                </h2>
+                                <div id="getPassMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Mevcut BinPass bilgilerini getirir.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;BinPassResponseModel&gt;&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- getBinPassSaleContract Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getBinPassSaleContractMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getBinPassSaleContract()</span>
+                                    </button>
+                                </h2>
+                                <div id="getBinPassSaleContractMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>BinPass satış sözleşmesini getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>packageId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Sözleşmesi getirilecek paketin ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- getBinPassInformationForm Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getBinPassInformationFormMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getBinPassInformationForm()</span>
+                                    </button>
+                                </h2>
+                                <div id="getBinPassInformationFormMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>BinPass bilgi formunu getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>packageId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Bilgi formu getirilecek paketin ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- is3dActive Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#is3dActiveMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">is3dActive()</span>
+                                    </button>
+                                </h2>
+                                <div id="is3dActiveMethod" class="accordion-collapse collapse" data-bs-parent="#binPassMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>3D Secure özelliğinin aktif olup olmadığını kontrol eder.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>packageId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Kontrol edilecek paketin ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralBoolResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campaigns API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#campaignsApiSection">
+                        <span class="fw-bold">Campaigns API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/campaigns.dart</span>
+                    </button>
+                </h2>
+                <div id="campaignsApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="campaignsMethodsAccordion">
+                            
+                            <!-- getCampaigns Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCampaignsMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getCampaigns()</span>
+                                    </button>
+                                </h2>
+                                <div id="getCampaignsMethod" class="accordion-collapse collapse" data-bs-parent="#campaignsMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Mevcut kampanyaların listesini getirir.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;CampaignsResponseModel&gt;&gt;</code></p>
+
+                                        <h5>Örnek Kullanım</h5>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final campaigns = await CampaignsApi().getCampaigns();
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- getCampaignsDetail Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCampaignsDetailMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getCampaignsDetail()</span>
+                                    </button>
+                                </h2>
+                                <div id="getCampaignsDetailMethod" class="accordion-collapse collapse" data-bs-parent="#campaignsMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Belirli bir kampanyanın detay bilgilerini getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>campaignsId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Detayları getirilecek kampanyanın ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;CampaignsDeatilResponseModel&gt;</code></p>
+
+                                        <h5>Örnek Kullanım</h5>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final campaignDetail = await CampaignsApi().getCampaignsDetail(123);
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contract API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contractApiSection">
+                        <span class="fw-bold">Contract API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/contract.dart</span>
+                    </button>
+                </h2>
+                <div id="contractApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="contractMethodsAccordion">
+
+                            <!-- KVKK Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kvkkMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">KVKK Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="kvkkMethods" class="accordion-collapse collapse" data-bs-parent="#contractMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getKvkk()</h5>
+                                        <p>KVKK metnini getirir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>country</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Ülke kodu</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5 class="mt-4">getContractKvkk()</h5>
+                                        <p>Sözleşme KVKK metnini getirir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>lang</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Dil kodu</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Agreement Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#agreementMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Sözleşme Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="agreementMethods" class="accordion-collapse collapse" data-bs-parent="#contractMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getExplicit()</h5>
+                                        <p>Açık rıza metnini getirir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>country</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Ülke kodu</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h5 class="mt-4">getContractExplicit()</h5>
+                                        <p>Sözleşme açık rıza metnini getirir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>lang</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Dil kodu</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Insurance Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#insuranceMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Sigorta Sözleşmeleri</span>
+                                    </button>
+                                </h2>
+                                <div id="insuranceMethods" class="accordion-collapse collapse" data-bs-parent="#contractMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getAxaInsuranceContracts()</h5>
+                                        <p>AXA sigorta sözleşmelerini getirir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>scooterOrPackageId</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Scooter veya paket ID'si</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>isPackage</code></td>
+                                                    <td><code>bool</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Paket mi? (varsayılan: false)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h5 class="mt-4">getOyakInsuranceContracts()</h5>
+                                        <p>OYAK sigorta sözleşmelerini getirir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>scooterOrPackageId</code></td>
+                                                    <td><code>String</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Scooter veya paket ID'si</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>isPackage</code></td>
+                                                    <td><code>bool</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Paket mi? (varsayılan: false)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <!-- Diğer sigorta metodları -->
+                                        <h5 class="mt-4">Diğer Sigorta Metodları</h5>
+                                        <ul>
+                                            <li><code>getSafeRideInsuranceContracts()</code> - Safe Ride sigorta sözleşmelerini getirir</li>
+                                            <li><code>getSafeRidePackageContracts(scooterOrPackageId)</code> - Safe Ride paket sözleşmelerini getirir</li>
+                                            <li><code>getMSSInsuranceContracts(scooterId)</code> - MSS sigorta sözleşmelerini getirir</li>
+                                            <li><code>getOBKInsuranceContracts(scooterId)</code> - OBK sigorta sözleşmelerini getirir</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Other Contract Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#otherContractMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Diğer Sözleşme Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="otherContractMethods" class="accordion-collapse collapse" data-bs-parent="#contractMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><code>getBinBinExplicit(scooterOrPackageId)</code> - BinBin açık rıza metnini getirir</li>
+                                            <li><code>getInformationForm(scooterOrPackageId)</code> - Bilgi formunu getirir</li>
+                                            <li><code>getTermOfUse(scooterOrPackageId)</code> - Kullanım koşullarını getirir</li>
+                                            <li><code>getSaleContract(scooterOrPackageId)</code> - Satış sözleşmesini getirir</li>
+                                            <li><code>getCommercialAgreement(country)</code> - Ticari sözleşmeyi getirir</li>
+                                            <li><code>getContractArm(lang)</code> - ARM sözleşmesini getirir</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Country API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#countryApiSection">
+                        <span class="fw-bold">Country API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/country.dart</span>
+                    </button>
+                </h2>
+                <div id="countryApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="countryMethodsAccordion">
+                            
+                            <!-- getCountries Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#getCountriesMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getCountries()</span>
+                                    </button>
+                                </h2>
+                                <div id="getCountriesMethod" class="accordion-collapse collapse show" data-bs-parent="#countryMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Varsayılan ülke listesini getirir. Şu anda API çağrısı yerine statik veri kullanılmaktadır.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;Country&gt;&gt;</code></p>
+
+                                        <h5>Not</h5>
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            API çağrısı şu anda devre dışı bırakılmıştır. Bunun yerine <code>defaultValuesCountries</code> sabit verisi kullanılmaktadır. Bu, 500 veya benzeri sunucu hatalarında bile ülke bayraklarının gösterilebilmesini sağlar.
+                                        </div>
+
+                                        <h5>Örnek Kullanım</h5>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final countryApi = CountryApi();
+final countries = await countryApi.getCountries();
+
+// Ülke listesini kullanma
+for (var country in countries) {
+    print(country.name);
+    print(country.flag);
+}
+                                            </code></pre>
+                                        </div>
+
+                                        <h5>Örnek Yanıt</h5>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>JSON</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+[
+    {
+        "name": "Turkey",
+        "code": "TR",
+        "flag": "🇹🇷",
+        "phoneCode": "+90"
+    },
+    {
+        "name": "Azerbaijan",
+        "code": "AZ",
+        "flag": "🇦🇿",
+        "phoneCode": "+994"
+    }
+    // ... diğer ülkeler
+]
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit Card API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#creditCardApiSection">
+                        <span class="fw-bold">Credit Card API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/credit_card_api.dart</span>
+                    </button>
+                </h2>
+                <div id="creditCardApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="creditCardMethodsAccordion">
+                            
+                            <!-- Card Verification Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cardVerificationMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">cardVerification()</span>
+                                    </button>
+                                </h2>
+                                <div id="cardVerificationMethod" class="accordion-collapse collapse" data-bs-parent="#creditCardMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>3D Secure kart doğrulama işlemini gerçekleştirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>addCardModel</code></td>
+                                                    <td><code>CardVerificationModel</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Kart doğrulama bilgilerini içeren model</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;String&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add Credit Card Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#addCreditCardMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">addCreditCard()</span>
+                                    </button>
+                                </h2>
+                                <div id="addCreditCardMethod" class="accordion-collapse collapse" data-bs-parent="#creditCardMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Yeni kredi kartı ekleme işlemini gerçekleştirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>addCardModel</code></td>
+                                                    <td><code>AddCardModel</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Kart bilgilerini içeren model</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;AddCardResponse&gt;</code></p>
+
+                                        <h5>Hata Yönetimi</h5>
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Başarısız işlemler için <code>PaymentMethodFailure.addCardFail</code> eventi loglanır.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Get First Card Text Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getFirstCardTextMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getFirstCardText()</span>
+                                    </button>
+                                </h2>
+                                <div id="getFirstCardTextMethod" class="accordion-collapse collapse" data-bs-parent="#creditCardMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>İlk kart ekleme ile ilgili bilgilendirme metnini getirir.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Get Card Verify Text Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCardVerifyTextMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getCardVerifyText()</span>
+                                    </button>
+                                </h2>
+                                <div id="getCardVerifyTextMethod" class="accordion-collapse collapse" data-bs-parent="#creditCardMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kart doğrulama ile ilgili bilgilendirme metnini getirir.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GeoJson API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#geoJsonApiSection">
+                        <span class="fw-bold">GeoJson API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/geojson.dart</span>
+                    </button>
+                </h2>
+                <div id="geoJsonApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="geoJsonMethodsAccordion">
+                            
+                            <!-- getScooters Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getScootersMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getScooters()</span>
+                                    </button>
+                                </h2>
+                                <div id="getScootersMethod" class="accordion-collapse collapse" data-bs-parent="#geoJsonMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Belirli bir konumdaki scooter'ları getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>pos</code></td>
+                                                    <td><code>LatLng</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Konum bilgisi (enlem, boylam)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;ScooterResponseModel&gt;&gt;</code></p>
+
+                                        <h5>Örnek Kullanım</h5>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final position = LatLng(41.0082, 28.9784); // İstanbul koordinatları
+final scooters = await GeoJsonApi().getScooters(position);
+
+for (var scooter in scooters) {
+    print('Scooter ID: ${scooter.id}');
+    print('Location: ${scooter.latitude}, ${scooter.longitude}');
+}
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- getGeoJsonData Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getGeoJsonDataMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getGeoJsonData()</span>
+                                    </button>
+                                </h2>
+                                <div id="getGeoJsonDataMethod" class="accordion-collapse collapse" data-bs-parent="#geoJsonMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>GeoFences v2 verilerini getirir.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;Map&lt;String, dynamic&gt;?&gt;</code></p>
+
+                                        <h5>Örnek Yanıt</h5>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>JSON</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    // ... koordinat dizisi
+                ]
+            },
+            "properties": {
+                "name": "Sürüş Alanı 1",
+                "type": "riding_area"
+            }
+        }
+        // ... diğer özellikler
+    ]
+}
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#helpApiSection">
+                        <span class="fw-bold">Help API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/help_api.dart</span>
+                    </button>
+                </h2>
+                <div id="helpApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="helpMethodsAccordion">
+                            
+                            <!-- Live Help Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#liveHelpMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Canlı Yardım</span>
+                                    </button>
+                                </h2>
+                                <div id="liveHelpMethods" class="accordion-collapse collapse" data-bs-parent="#helpMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getHelpLiveUrl()</h5>
+                                        <p>Canlı yardım URL'sini getirir.</p>
+                                        <p><code>Future&lt;GeneralResponse?&gt;</code></p>
+
+                                        <h5 class="mt-4">signLanguage()</h5>
+                                        <p>İşaret dili desteği bilgisini getirir.</p>
+                                        <p><code>Future&lt;GeneralResponse?&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Us Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contactUsMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">İletişim Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="contactUsMethods" class="accordion-collapse collapse" data-bs-parent="#helpMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>contactUsForm()</h5>
+                                        <p>İletişim formu gönderir.</p>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>contactUsModel</code></td>
+                                                    <td><code>ContactUsModel</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>İletişim formu bilgileri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p><code>Future&lt;GeneralResponse?&gt;</code></p>
+
+                                        <h5 class="mt-4">getContactUsList()</h5>
+                                        <p>İletişim seçeneklerini yerel JSON dosyasından yükler.</p>
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Bu metod <code>assets/contact.json</code> dosyasından veri okur.
+                                        </div>
+                                        <p><code>Future&lt;ContactUsChooseModel&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Help Content Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#helpContentMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Yardım İçeriği</span>
+                                    </button>
+                                </h2>
+                                <div id="helpContentMethods" class="accordion-collapse collapse" data-bs-parent="#helpMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getGroups()</h5>
+                                        <p>Yardım gruplarını getirir.</p>
+                                        <p><code>Future&lt;List&lt;HelpGroupResponse&gt;?&gt;</code></p>
+
+                                        <h5 class="mt-4">getQuestions()</h5>
+                                        <p>Sık sorulan soruları getirir.</p>
+                                        <p><code>Future&lt;List&lt;HelpQuestionsResponse&gt;?&gt;</code></p>
+
+                                        <h5>Örnek Yanıt</h5>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                                <span>JSON</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "groups": [
+        {
+            "id": 1,
+            "title": "Genel Sorular",
+            "questions": [...]
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "question": "Nasıl üye olabilirim?",
+            "answer": "...",
+            "groupId": 1
+        }
+    ]
+}
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#historyApiSection">
+                        <span class="fw-bold">History API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/history.dart</span>
+                    </button>
+                </h2>
+                <div id="historyApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="historyMethodsAccordion">
+                            
+                            <!-- Past Activities Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pastActivitiesMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Geçmiş Aktiviteler</span>
+                                    </button>
+                                </h2>
+                                <div id="pastActivitiesMethods" class="accordion-collapse collapse" data-bs-parent="#historyMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getPastRides()</h5>
+                                        <p>Geçmiş sürüşleri getirir.</p>
+                                        <p><code>Future&lt;List&lt;PastRideResponseModel&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getPastReservation()</h5>
+                                        <p>Geçmiş rezervasyonları getirir.</p>
+                                        <p><code>Future&lt;List&lt;PastReservationResponseModel&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getPastPenalties()</h5>
+                                        <p>Geçmiş cezaları getirir.</p>
+                                        <p><code>Future&lt;List&lt;PastPenaltiesResponseModel&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getPastGifts()</h5>
+                                        <p>Geçmiş hediyeleri getirir.</p>
+                                        <p><code>Future&lt;List&lt;PastGiftResponseModel&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getPastPackages()</h5>
+                                        <p>Geçmiş BinPass paketlerini getirir.</p>
+                                        <p><code>Future&lt;List&lt;PastBinPassResponseModel&gt;&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Feedback Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#feedbackMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">postFeedback()</span>
+                                    </button>
+                                </h2>
+                                <div id="feedbackMethod" class="accordion-collapse collapse" data-bs-parent="#historyMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Sürüş için geri bildirim gönderir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>model</code></td>
+                                                    <td><code>FeedbackRequestModel</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Geri bildirim bilgileri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralBoolResponse?&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Route Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#routeMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getScooterRoute()</span>
+                                    </button>
+                                </h2>
+                                <div id="routeMethod" class="accordion-collapse collapse" data-bs-parent="#historyMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Scooter'ın geçmiş rota bilgilerini getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>scooterId</code></td>
+                                                    <td><code>int?</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Scooter ID'si</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>rideId</code></td>
+                                                    <td><code>int?</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Sürüş ID'si</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>start</code></td>
+                                                    <td><code>DateTime?</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Başlangıç tarihi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>end</code></td>
+                                                    <td><code>DateTime?</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Bitiş tarihi</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;RouteModel&gt;&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- InApp API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#inAppApiSection">
+                        <span class="fw-bold">InApp API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/inApp_api.dart</span>
+                    </button>
+                </h2>
+                <div id="inAppApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="inAppMethodsAccordion">
+                            
+                            <!-- Partnership Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#partnershipMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Ortaklık Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="partnershipMethods" class="accordion-collapse collapse" data-bs-parent="#inAppMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getPartnershipBanner()</h5>
+                                        <p>Ortaklık bannerlarını getirir.</p>
+                                        <p><code>Future&lt;List&lt;BannerResponseModel&gt;&gt;</code></p>
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Hata durumunda <code>LogNameConstants.bannerApiFail</code> eventi loglanır.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Partial Payment Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#partialPaymentMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Taksitli Ödeme</span>
+                                    </button>
+                                </h2>
+                                <div id="partialPaymentMethods" class="accordion-collapse collapse" data-bs-parent="#inAppMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getPartialPaymentAgreement()</h5>
+                                        <p>Taksitli ödeme anlaşma bölgelerini getirir.</p>
+                                        <p><code>Future&lt;List&lt;PartialPaymentAgreementRegionModel?&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getPartialPaymentDate()</h5>
+                                        <p>Taksitli ödeme tarihlerini getirir.</p>
+                                        <p><code>Future&lt;PartialPaymentDateModel&gt;</code></p>
+
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Hata durumlarında ilgili log eventleri tetiklenir:
+                                            <ul class="mb-0">
+                                                <li><code>LogNameConstants.partialPaymentFail</code></li>
+                                                <li><code>LogNameConstants.partialPaymentDateFail</code></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Taxi Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taxiMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Taksi Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="taxiMethods" class="accordion-collapse collapse" data-bs-parent="#inAppMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getFakeTaxiList()</h5>
+                                        <p>Sahte taksi listesini getirir.</p>
+                                        <p><code>Future&lt;List&lt;FakeTaxiListResponse&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getTaxiAreaList()</h5>
+                                        <p>Taksi bölgelerini getirir.</p>
+                                        <p><code>Future&lt;List&lt;int&gt;&gt;</code></p>
+
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Hata durumlarında loglanacak eventler:
+                                            <ul class="mb-0">
+                                                <li><code>LogNameConstants.getFakeTaxiListErrorAppear</code></li>
+                                                <li><code>LogNameConstants.getTaxiAreaFetched</code></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GoSharing Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#goSharingMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">GoSharing Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="goSharingMethods" class="accordion-collapse collapse" data-bs-parent="#inAppMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getGoSharingOperations()</h5>
+                                        <p>Tüm GoSharing operasyonlarını getirir.</p>
+                                        <p><code>Future&lt;List&lt;GoSharingOperationsResponse&gt;&gt;</code></p>
+
+                                        <h5 class="mt-4">getGoSharingOnlygoOperations()</h5>
+                                        <p>Sadece Go operasyonlarını getirir.</p>
+                                        <p><code>Future&lt;List&lt;GoSharingOperationsResponse&gt;&gt;</code></p>
+
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Her iki metod için de hata durumunda <code>LogNameConstants.getGoSharingOperationsErrorAppear</code> eventi loglanır.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invoice API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceApiSection">
+                        <span class="fw-bold">Invoice API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/invoice.dart</span>
+                    </button>
+                </h2>
+                <div id="invoiceApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="invoiceMethodsAccordion">
+                            
+                            <!-- Email Invoice Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emailInvoiceMethods">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">Fatura E-posta Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="emailInvoiceMethods" class="accordion-collapse collapse" data-bs-parent="#invoiceMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Temel Metod</h5>
+                                        <p><code>sendMailInvoice(Uri endpoint)</code></p>
+                                        <p>Tüm fatura e-posta işlemleri için temel metod.</p>
+
+                                        <h5 class="mt-4">Özelleştirilmiş Metodlar</h5>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Metod</th>
+                                                    <th>Parametre</th>
+                                                    <th>Açıklama</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>sendMailRideInvoice()</code></td>
+                                                    <td><code>rideId: int</code></td>
+                                                    <td>Sürüş faturası gönderir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sendMailReservationInvoice()</code></td>
+                                                    <td><code>reservationId: int</code></td>
+                                                    <td>Rezervasyon faturası gönderir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sendMailGiftInvoice()</code></td>
+                                                    <td><code>giftId: int</code></td>
+                                                    <td>Hediye faturası gönderir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sendMailPackageInvoice()</code></td>
+                                                    <td><code>packageId: int</code></td>
+                                                    <td>Paket faturası gönderir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sendMailPenaltyInvoice()</code></td>
+                                                    <td><code>penaltyId: int</code></td>
+                                                    <td>Ceza faturası gönderir</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h5>Dönüş Değeri</h5>
+                                        <p>Tüm metodlar için: <code>Future&lt;InvoiceResponseModel&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Invoice Link Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceLinkMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getInvoiceLink()</span>
+                                    </button>
+                                </h2>
+                                <div id="invoiceLinkMethod" class="accordion-collapse collapse" data-bs-parent="#invoiceMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Fatura PDF linkini getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>invoiceId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Fatura ID'si</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>type</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Fatura tipi</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;PdfUrlResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Invoice Receipt Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceReceiptMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">invoiceReceipt()</span>
+                                    </button>
+                                </h2>
+                                <div id="invoiceReceiptMethod" class="accordion-collapse collapse" data-bs-parent="#invoiceMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Fatura makbuzu oluşturur.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>invoiceId</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Fatura ID'si</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>type</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Fatura tipi</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;InvoiceReceiptResponseModel&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Locations API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#locationsApiSection">
+                        <span class="fw-bold">Locations API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/locations.dart</span>
+                    </button>
+                </h2>
+                <div id="locationsApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="locationsMethodsAccordion">
+                            
+                            <!-- Location Info Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#locationInfoMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">locationInfo()</span>
+                                    </button>
+                                </h2>
+                                <div id="locationInfoMethod" class="accordion-collapse collapse show" data-bs-parent="#locationsMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Belirli bir koordinat için konum bilgilerini getirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>latitude</code></td>
+                                                    <td><code>double?</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Enlem değeri</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>longitude</code></td>
+                                                    <td><code>double?</code></td>
+                                                    <td><span class="optional-badge">Opsiyonel</span></td>
+                                                    <td>Boylam değeri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;LocationInfoModel&gt;</code></p>
+
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Hata durumunda <code>LogNameConstants.locationInfoApiFailResult</code> eventi loglanır ve boş bir <code>LocationInfoModel</code> döndürülür.
+                                        </div>
+
+                                        <h5>Örnek Kullanım</h5>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final locationsApi = LocationsApi();
+final locationInfo = await locationsApi.locationInfo(41.0082, 28.9784);
+
+print('Konum Bilgisi: ${locationInfo.address}');
+print('Şehir: ${locationInfo.city}');
+print('Ülke: ${locationInfo.country}');
+                                </code></pre>
+                            </div>
+
+                            <h5>Örnek Yanıt</h5>
+                            <div class="code-block response-success">
+                                <div class="code-header">
+                                    <span>JSON</span>
+                                    <button class="copy-button">Kopyala</button>
+                                </div>
+                                <pre><code class="language-json">
+{
+    "address": "Beyoğlu, İstanbul",
+    "city": "İstanbul",
+    "country": "Türkiye",
+    "district": "Beyoğlu",
+    "isInOperationArea": true,
+    "isParkingArea": false
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Map Style API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mapStyleApiSection">
+                        <span class="fw-bold">Map Style API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/map_style_api.dart</span>
+                    </button>
+                </h2>
+                <div id="mapStyleApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="mapStyleMethodsAccordion">
+                            
+                            <!-- Map Style Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mapStyleMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Harita Stil Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="mapStyleMethods" class="accordion-collapse collapse show" data-bs-parent="#mapStyleMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getMapStyle()</h5>
+                                        <p>Harita stilini API'den getirir. API başarısız olursa varsayılan stili kullanır.</p>
+                                        <p><code>Future&lt;String&gt;</code></p>
+
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            API çağrısı <code>InappEndpoints.getMapStyle()</code> endpoint'ini kullanır ve <code>ApiEnum.inapp</code> API tipini kullanır.
+                                        </div>
+
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Hata durumunda:
+                                            <ul class="mb-0">
+                                                <li><code>LogNameConstants.mapStyleApiFail</code> eventi loglanır</li>
+                                                <li>Varsayılan harita stili kullanılır</li>
+                                            </ul>
+                                        </div>
+
+                                        <h5 class="mt-4">getDefaultMapStyle()</h5>
+                                        <p>Varsayılan harita stilini yerel dosyadan yükler.</p>
+                                        <p><code>Future&lt;String&gt;</code></p>
+
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Varsayılan stil <code>assets/map_style.txt</code> dosyasından okunur.
+                                        </div>
+
+                                        <h5>Örnek Kullanım</h5>
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final mapStyleApi = MapStyleApi();
+
+// API'den stil getirme (varsayılan stile fallback ile)
+final mapStyle = await mapStyleApi.getMapStyle();
+
+// Doğrudan varsayılan stili getirme
+final defaultStyle = await mapStyleApi.getDefaultMapStyle();
+
+// Google Maps'te kullanım
+googleMapController.setMapStyle(mapStyle);
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#notificationApiSection">
+                        <span class="fw-bold">Notification API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/notification_api.dart</span>
+                    </button>
+                </h2>
+                <div id="notificationApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="notificationMethodsAccordion">
+                            
+                            <!-- Get Notifications Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getNotificationsMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getNotificationList()</span>
+                                    </button>
+                                </h2>
+                                <div id="getNotificationsMethod" class="accordion-collapse collapse" data-bs-parent="#notificationMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kullanıcının bildirimlerini listeler.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;Notification&gt;&gt;</code></p>
+
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Hata durumunda veya geçersiz yanıt alındığında boş liste döndürür.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Delete Notification Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deleteNotificationMethod">
+                                        <span class="method-tag method-delete">DELETE</span>
+                                        <span class="fw-bold">deleteNotification()</span>
+                                    </button>
+                                </h2>
+                                <div id="deleteNotificationMethod" class="accordion-collapse collapse" data-bs-parent="#notificationMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Belirli bir bildirimi siler.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>id</code></td>
+                                                    <td><code>int</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>Silinecek bildirimin ID'si</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;GeneralResponse&gt;</code></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentApiSection">
+                        <span class="fw-bold">Payment API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/payment_api.dart</span>
+                    </button>
+                </h2>
+                <div id="paymentApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="paymentMethodsAccordion">
+                            
+                            <!-- Get Payment Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getPaymentMethodsMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getPaymentMethods()</span>
+                                    </button>
+                                </h2>
+                                <div id="getPaymentMethodsMethod" class="accordion-collapse collapse" data-bs-parent="#paymentMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Kullanılabilir ödeme yöntemlerini getirir (kart ödemesi hariç).</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;List&lt;PaymentMethodResponse&gt;&gt;</code></p>
+
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            <code>PaymentMethod.card</code> tipindeki ödeme yöntemleri otomatik olarak filtrelenir.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pay With E-Wallet Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#payWithEwalletMethod">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">payWithEwallet()</span>
+                                    </button>
+                                </h2>
+                                <div id="payWithEwalletMethod" class="accordion-collapse collapse" data-bs-parent="#paymentMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>E-cüzdan ile ödeme işlemini gerçekleştirir.</p>
+                                        
+                                        <h5>Parametreler</h5>
+                                        <table class="table table-bordered parameter-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>model</code></td>
+                                                    <td><code>PayWithEwalletRequestModel</code></td>
+                                                    <td><span class="required-badge">Zorunlu</span></td>
+                                                    <td>E-cüzdan ödeme bilgileri</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;PayWithEwalletResponse&gt;</code></p>
+
+                                        <div class="alert alert-info">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Hata durumunda boş bir <code>PayWithEwalletResponse</code> nesnesi döndürülür.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Get Encryption Key Method -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getEncryptionKeyMethod">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">getEncryptrionKey()</span>
+                                    </button>
+                                </h2>
+                                <div id="getEncryptionKeyMethod" class="accordion-collapse collapse" data-bs-parent="#paymentMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Açıklama</h5>
+                                        <p>Ödeme işlemleri için şifreleme anahtarını getirir.</p>
+                                        
+                                        <h5>Dönüş Değeri</h5>
+                                        <p><code>Future&lt;String&gt;</code></p>
+
+                                        <div class="alert alert-warning">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Hata durumunda boş string (<code>''</code>) döndürülür.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Example Usage -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentExampleUsage">
+                                        <span class="fw-bold">Örnek Kullanım</span>
+                                    </button>
+                                </h2>
+                                <div id="paymentExampleUsage" class="accordion-collapse collapse" data-bs-parent="#paymentMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final paymentApi = PaymentApi();
+
+// Ödeme yöntemlerini getir
+final methods = await paymentApi.getPaymentMethods();
+
+// E-cüzdan ile ödeme yap
+final ewalletRequest = PayWithEwalletRequestModel(
+    amount: 100,
+    currency: 'TRY',
+    // ... diğer parametreler
+);
+final paymentResult = await paymentApi.payWithEwallet(ewalletRequest);
+
+// Şifreleme anahtarını al
+final encryptionKey = await paymentApi.getEncryptrionKey();
+                                            </code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ride API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rideApiSection">
+                        <span class="fw-bold">Ride API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/ride_api.dart</span>
+                    </button>
+                </h2>
+                <div id="rideApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion" id="rideMethodsAccordion">
+
+                            <!-- Scooter Info Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#scooterInfoMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Scooter Bilgi Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="scooterInfoMethods" class="accordion-collapse collapse" data-bs-parent="#rideMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getScooter()</h5>
+                                        <p>Scooter bilgilerini getirir.</p>
+                                        <code>Future&lt;ScooterResponseModel&gt;</code>
+
+                                        <h5 class="mt-4">getOutOfZoneText()</h5>
+                                        <p>Bölge dışı uyarı metnini getirir.</p>
+                                        <code>Future&lt;OutOfRegion&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ride Control Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rideControlMethods">
+                                        <span class="method-tag method-mixed">POST/PUT</span>
+                                        <span class="fw-bold">Sürüş Kontrol Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="rideControlMethods" class="accordion-collapse collapse" data-bs-parent="#rideMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Metod</th>
+                                                    <th>HTTP</th>
+                                                    <th>Açıklama</th>
+                                                    <th>Dönüş Tipi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>startRide()</code></td>
+                                                    <td>POST</td>
+                                                    <td>Sürüşü başlatır</td>
+                                                    <td><code>RideStartResponse</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>endRide()</code></td>
+                                                    <td>POST</td>
+                                                    <td>Sürüşü sonlandırır</td>
+                                                    <td><code>EndRideResponse</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>unlock()</code></td>
+                                                    <td>POST</td>
+                                                    <td>Scooter kilidini açar</td>
+                                                    <td><code>GeneralBoolResponse</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>ringBell()</code></td>
+                                                    <td>POST</td>
+                                                    <td>Zil çalar</td>
+                                                    <td><code>GeneralBoolResponse</code></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reservation Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#reservationMethods">
+                                        <span class="method-tag method-mixed">POST/PUT</span>
+                                        <span class="fw-bold">Rezervasyon Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="reservationMethods" class="accordion-collapse collapse" data-bs-parent="#rideMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>startReservation()</h5>
+                                        <p>Rezervasyon başlatır.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+
+                                        <h5 class="mt-4">completeReservation()</h5>
+                                        <p>Rezervasyonu tamamlar.</p>
+                                        <code>Future&lt;CompleteReservationResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mode Control Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modeControlMethods">
+                                        <span class="method-tag method-mixed">GET/PUT</span>
+                                        <span class="fw-bold">Mod Kontrol Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="modeControlMethods" class="accordion-collapse collapse" data-bs-parent="#rideMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>headLight()</h5>
+                                        <p>Far durumunu kontrol eder.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+
+                                        <h5>scooterMode()</h5>
+                                        <p>Scooter modunu değiştirir.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+
+                                        <h5>updateRideMode()</h5>
+                                        <p>Sürüş modunu günceller.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+
+                                        <h5>getUserRideModeSettings()</h5>
+                                        <p>Kullanıcının sürüş modu ayarlarını getirir.</p>
+                                        <code>Future&lt;RideModeInfoResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Status Check Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#statusCheckMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Durum Kontrol Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="statusCheckMethods" class="accordion-collapse collapse" data-bs-parent="#rideMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>activeRide()</h5>
+                                        <p>Aktif sürüşleri listeler.</p>
+                                        <code>Future&lt;List&lt;ActiveRideResponse&gt;&gt;</code>
+
+                                        <h5>isOutOfRegion()</h5>
+                                        <p>Bölge dışında olup olmadığını kontrol eder.</p>
+                                        <code>Future&lt;IsOutOfRegionResponse?&gt;</code>
+
+                                        <h5>getRideInfo()</h5>
+                                        <p>Sürüş bilgilerini getirir.</p>
+                                        <code>Future&lt;RideInfo&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Photo Verification Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#photoVerificationMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Fotoğraf Doğrulama Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="photoVerificationMethods" class="accordion-collapse collapse" data-bs-parent="#rideMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getWithoutPhotoCount()</h5>
+                                        <p>Fotoğrafsız sürüş sayısını getirir.</p>
+                                        <code>Future&lt;int&gt;</code>
+
+                                        <h5>verifyPhotoEnd()</h5>
+                                        <p>Bitiş fotoğrafını doğrular.</p>
+                                        <code>Future&lt;GeneralBoolResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Settings API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#settingsApiSection">
+                        <span class="fw-bold">Settings API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/settings_api.dart</span>
+                    </button>
+                </h2>
+                <div id="settingsApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="alert alert-info mb-3">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Bu API singleton pattern kullanılarak implemente edilmiştir.
+                        </div>
+
+                        <div class="accordion" id="settingsMethodsAccordion">
+                            
+                            <!-- App Configuration Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appConfigMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Uygulama Yapılandırma Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="appConfigMethods" class="accordion-collapse collapse" data-bs-parent="#settingsMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getStartup()</h5>
+                                        <p>Uygulama başlangıç servis ayarlarını getirir.</p>
+                                        <code>Future&lt;AppStartupService&gt;</code>
+                                        <div class="alert alert-info mt-2">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Hata durumunda boş bir <code>AppStartupService</code> nesnesi döndürür.
+                                        </div>
+
+                                        <h5 class="mt-4">getStoreVersion()</h5>
+                                        <p>Uygulama mağaza versiyonunu kontrol eder.</p>
+                                        <code>Future&lt;AppVersionResponse&gt;</code>
+                                        <div class="alert alert-info mt-2">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Hata durumunda boş bir <code>AppVersionResponse</code> nesnesi döndürür.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Registration Form Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#registrationFormMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Kayıt Form Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="registrationFormMethods" class="accordion-collapse collapse" data-bs-parent="#settingsMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getInfoRegistrationForm()</h5>
+                                        <p>Kayıt formu bilgilerini getirir.</p>
+                                        <code>Future&lt;InfoRegistrationForm&gt;</code>
+
+                                        <h5 class="mt-4">getRegistrationRequiredFields()</h5>
+                                        <p>Kayıt için gerekli alanları getirir.</p>
+                                        <code>Future&lt;RequiredFields&gt;</code>
+
+                                        <div class="alert alert-warning mt-3">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Her iki metod da null yanıt veya hata durumunda boş model nesnesi döndürür.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Example Usage -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#settingsExampleUsage">
+                                        <span class="fw-bold">Örnek Kullanım</span>
+                                    </button>
+                                </h2>
+                                <div id="settingsExampleUsage" class="accordion-collapse collapse" data-bs-parent="#settingsMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final settingsApi = SettingsApi();
+
+// Uygulama başlangıç ayarlarını al
+final startupSettings = await settingsApi.getStartup();
+
+// Versiyon kontrolü yap
+final appVersion = await settingsApi.getStoreVersion();
+if (appVersion.needsUpdate) {
+    // Güncelleme gerekli
+}
+
+// Kayıt formu bilgilerini al
+final formInfo = await settingsApi.getInfoRegistrationForm();
+final requiredFields = await settingsApi.getRegistrationRequiredFields();
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userApiSection">
+                        <span class="fw-bold">User API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/user_api.dart</span>
+                    </button>
+                </h2>
+                <div id="userApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="userMethodsAccordion">
+                            
+                            <!-- User Info Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInfoMethods">
+                                        <span class="method-tag method-mixed">GET/PUT</span>
+                                        <span class="fw-bold">Kullanıcı Bilgi Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="userInfoMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Metod</th>
+                                                    <th>HTTP</th>
+                                                    <th>Açıklama</th>
+                                                    <th>Dönüş Tipi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>getUserInfo()</code></td>
+                                                    <td>GET</td>
+                                                    <td>Kullanıcı bilgilerini getirir</td>
+                                                    <td><code>UserInfo</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>getUserStartup()</code></td>
+                                                    <td>GET</td>
+                                                    <td>Başlangıç bilgilerini getirir</td>
+                                                    <td><code>UserStartup</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>setUserInfo()</code></td>
+                                                    <td>PUT</td>
+                                                    <td>Kullanıcı bilgilerini günceller</td>
+                                                    <td><code>GeneralResponse</code></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Language Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#languageMethods">
+                                        <span class="method-tag method-mixed">GET/PUT</span>
+                                        <span class="fw-bold">Dil Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="languageMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getLanguages()</h5>
+                                        <p>Kullanılabilir dilleri listeler.</p>
+                                        <code>Future&lt;List&lt;Language&gt;&gt;</code>
+
+                                        <h5 class="mt-4">setLanguage()</h5>
+                                        <p>Kullanıcı dilini günceller.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Invoice Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#invoiceMethods">
+                                        <span class="method-tag method-mixed">GET/PUT</span>
+                                        <span class="fw-bold">Fatura Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="invoiceMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getInvoiceInfo()</h5>
+                                        <p>Fatura bilgilerini getirir.</p>
+                                        <code>Future&lt;InvoiceInfo&gt;</code>
+
+                                        <h5>updateInvoiceInfo()</h5>
+                                        <p>Fatura bilgilerini günceller.</p>
+                                        <code>Future&lt;GeneralBoolResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Verification Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#verificationMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Doğrulama Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="verificationMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>identityUser()</code></td>
+                                                    <td>Kimlik doğrulama işlemi</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>getVerificationInfo()</code></td>
+                                                    <td>Doğrulama bilgilerini getirir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sendConfirmationEmail()</code></td>
+                                                    <td>Doğrulama e-postası gönderir</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Communication Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#communicationMethods">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="fw-bold">İletişim İzinleri</span>
+                                    </button>
+                                </h2>
+                                <div id="communicationMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>postCommunicationPermissions()</h5>
+                                        <p>İletişim izinlerini günceller.</p>
+                                        <code>Future&lt;CommunicationPermissionResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Management -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accountManagementMethods">
+                                        <span class="method-tag method-mixed">PUT/DELETE</span>
+                                        <span class="fw-bold">Hesap Yönetimi</span>
+                                    </button>
+                                </h2>
+                                <div id="accountManagementMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>updateEmail()</code></td>
+                                                    <td>E-posta güncelleme</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>setUserCountry()</code></td>
+                                                    <td>Ülke bilgisi güncelleme</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>deleteUser()</code></td>
+                                                    <td>Kullanıcı hesabını silme</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- App Review Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appReviewMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Uygulama Değerlendirme</span>
+                                    </button>
+                                </h2>
+                                <div id="appReviewMethods" class="accordion-collapse collapse" data-bs-parent="#userMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getAppReview()</h5>
+                                        <p>Değerlendirme durumunu getirir.</p>
+                                        <code>Future&lt;GeneralBoolResponse&gt;</code>
+
+                                        <h5>postAppReview()</h5>
+                                        <p>Değerlendirme gönderir.</p>
+                                        <code>Future&lt;GeneralBoolResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wallet API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#walletApiSection">
+                        <span class="fw-bold">Wallet API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/wallet_api.dart</span>
+                    </button>
+                </h2>
+                <div id="walletApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion" id="walletMethodsAccordion">
+                            
+                            <!-- Balance Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#balanceMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Bakiye İşlemleri</span>
+                                    </button>
+                                </h2>
+                                <div id="balanceMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>getBalance()</code></td>
+                                                    <td>Cüzdan bakiyesini getirir</td>
+                                                    <td><code>Balance</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>moneyAndBonus()</code></td>
+                                                    <td>Para ve bonus bilgilerini getirir</td>
+                                                    <td><code>MoneyAndBonus</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>getWalletStatement()</code></td>
+                                                    <td>Cüzdan hareketlerini listeler</td>
+                                                    <td><code>List&lt;WalletStatementModel&gt;</code></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Management -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cardManagementMethods">
+                                        <span class="method-tag method-mixed">GET/PUT/DELETE</span>
+                                        <span class="fw-bold">Kart Yönetimi</span>
+                                    </button>
+                                </h2>
+                                <div id="cardManagementMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>getDefaultCards()</code></td>
+                                                    <td>Kayıtlı kartları listeler</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>setDefaultCard()</code></td>
+                                                    <td>Varsayılan kartı belirler</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>deleteCard()</code></td>
+                                                    <td>Kart siler</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Money Transfer -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moneyTransferMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Para Transferi</span>
+                                    </button>
+                                </h2>
+                                <div id="moneyTransferMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>Para Gönderme</h5>
+                                        <ul>
+                                            <li><code>getSendMoneyTerms()</code> - Transfer koşullarını getirir</li>
+                                            <li><code>canSendMoney()</code> - Transfer yapılabilirliğini kontrol eder</li>
+                                            <li><code>postSendGift()</code> - Para transferi yapar</li>
+                                            <li><code>friendVerify()</code> - Alıcıyı doğrular</li>
+                                        </ul>
+
+                                        <h5>Para Yükleme</h5>
+                                        <ul>
+                                            <li><code>postAddMoney()</code> - Para yükleme işlemi</li>
+                                            <li><code>addFundMobile()</code> - Mobil ödeme ile yükleme</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Auto Top-up -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#autoTopUpMethods">
+                                        <span class="method-tag method-mixed">GET/PUT</span>
+                                        <span class="fw-bold">Otomatik Yükleme</span>
+                                    </button>
+                                </h2>
+                                <div id="autoTopUpMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getWalletAutoAdd()</h5>
+                                        <p>Otomatik yükleme ayarlarını getirir.</p>
+                                        <code>Future&lt;WalletAutoTopUpModel&gt;</code>
+
+                                        <h5>updateWalletAutoAdd()</h5>
+                                        <p>Otomatik yükleme ayarlarını günceller.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Payment -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mobilePaymentMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Mobil Ödeme</span>
+                                    </button>
+                                </h2>
+                                <div id="mobilePaymentMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>getMobilePaymentInfo()</code></td>
+                                                    <td>Mobil ödeme bilgilerini getirir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>checkMobilePaymentOtpStep()</code></td>
+                                                    <td>OTP adımını kontrol eder</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>sendSmsMobileOtp()</code></td>
+                                                    <td>SMS OTP gönderir</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>resendSmsCodeMobilePayment()</code></td>
+                                                    <td>SMS kodunu yeniden gönderir</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Debt Management -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#debtMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Borç İşlemleri</span>
+                                    </button>
+                                </h2>
+                                <div id="debtMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>debt()</h5>
+                                        <p>Borç bilgilerini getirir.</p>
+                                        <code>Future&lt;DebtResponseModel&gt;</code>
+
+                                        <h5>debtPay()</h5>
+                                        <p>Borç ödemesi yapar.</p>
+                                        <code>Future&lt;GeneralResponse&gt;</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Features -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#additionalMethods">
+                                        <span class="method-tag method-mixed">GET/POST</span>
+                                        <span class="fw-bold">Ek Özellikler</span>
+                                    </button>
+                                </h2>
+                                <div id="additionalMethods" class="accordion-collapse collapse" data-bs-parent="#walletMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>giftCode()</code></td>
+                                                    <td>Hediye kodu kullanımı</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>checkPaymentMethod()</code></td>
+                                                    <td>Ödeme yöntemi kontrolü</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>mandatory3d()</code></td>
+                                                    <td>3D Secure zorunluluğu kontrolü</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- World API -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#worldApiSection">
+                        <span class="fw-bold">World API</span>
+                        <span class="ms-2 text-muted">lib/data/network/apis/world_api.dart</span>
+                    </button>
+                </h2>
+                <div id="worldApiSection" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                    <div class="accordion-body">
+                        <div class="alert alert-info mb-3">
+                            <i class="bi bi-info-circle me-2"></i>
+                            Bu API, coğrafi bölge verilerini ve tenant-spesifik dünya verilerini yönetir.
+                        </div>
+
+                        <div class="accordion" id="worldMethodsAccordion">
+                            
+                            <!-- World Data Methods -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#worldDataMethods">
+                                        <span class="method-tag method-get">GET</span>
+                                        <span class="fw-bold">Dünya Veri Metodları</span>
+                                    </button>
+                                </h2>
+                                <div id="worldDataMethods" class="accordion-collapse collapse" data-bs-parent="#worldMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <h5>getWorldData()</h5>
+                                        <p>Binbin tenant'ı için dünya verilerini getirir.</p>
+                                        <code>Future&lt;Properties?&gt;</code>
+                                        <div class="alert alert-warning mt-2">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Hata durumunda:
+                                            <ul class="mb-0">
+                                                <li><code>LogNameConstants.worldDataFail</code> loglanır</li>
+                                                <li>Varsayılan veriler (<code>worldData.json</code>) kullanılır</li>
+                                            </ul>
+                                        </div>
+
+                                        <h5 class="mt-4">getGosharingWorldData()</h5>
+                                        <p>GoSharing tenant'ı için dünya verilerini getirir.</p>
+                                        <code>Future&lt;Properties?&gt;</code>
+                                        <div class="alert alert-warning mt-2">
+                                            <i class="bi bi-exclamation-triangle me-2"></i>
+                                            Hata durumunda:
+                                            <ul class="mb-0">
+                                                <li><code>LogNameConstants.worldDataFail</code> loglanır</li>
+                                                <li>Varsayılan veriler (<code>goSharingWorldData.json</code>) kullanılır</li>
+                                            </ul>
+                                        </div>
+
+                                        <h5 class="mt-4">getDefaultData()</h5>
+                                        <p>Tenant'a göre varsayılan verileri yerel dosyadan yükler.</p>
+                                        <code>Future&lt;Properties&gt;</code>
+                                        <div class="alert alert-info mt-2">
+                                            <i class="bi bi-info-circle me-2"></i>
+                                            Tenant'a göre farklı dosyalar kullanılır:
+                                            <ul class="mb-0">
+                                                <li>Binbin: <code>assets/worldData.json</code></li>
+                                                <li>GoSharing: <code>assets/goSharingWorldData.json</code></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Example Usage -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#worldExampleUsage">
+                                        <span class="fw-bold">Örnek Kullanım</span>
+                                    </button>
+                                </h2>
+                                <div id="worldExampleUsage" class="accordion-collapse collapse" data-bs-parent="#worldMethodsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="code-block">
+                                            <div class="code-header">
+                                                <span>Dart</span>
+                                                <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-dart">
+final worldApi = WorldApi();
+
+// Tenant'a göre dünya verilerini getir
+final Properties? worldData;
+if (RunTimeUtils.headerTenant == RuntimeTenant.binbin) {
+    worldData = await worldApi.getWorldData();
+} else {
+    worldData = await worldApi.getGosharingWorldData();
+}
+
+// Hata durumunda varsayılan verileri kullan
+if (worldData == null) {
+    worldData = await worldApi.getDefaultData();
+}
+                                </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    
+    <!-- Copy to Clipboard Function -->
+    <script>
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const codeBlock = button.closest('.code-block').querySelector('code');
+                navigator.clipboard.writeText(codeBlock.textContent.trim());
+                
+                // Geçici olarak butonun metnini değiştir
+                const originalText = button.textContent;
+                button.textContent = 'Kopyalandı!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
