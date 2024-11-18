@@ -1455,6 +1455,38 @@ for (var country in countries) {
                                         
                                         <h5>Dönüş Değeri</h5>
                                         <p><code>Future&lt;List&lt;ScooterResponseModel&gt;&gt;</code></p>
+                                        <div class="code-block response-success">
+                                            <div class="code-header">
+                                              <span>ScooterResponseModel</span>
+                                              <button class="copy-button">Kopyala</button>
+                                            </div>
+                                            <pre><code class="language-json">
+{
+    "scooterId": 12345,
+    "scooterKodu": "SCT123",
+    "batarya": 85,
+    "maksSurusSuresi": 120,
+    "sonEnlem": "41.0082",
+    "sonBoylam": "28.9784",
+    "acilisUcreti": 500,
+    "dakikaBasiUcreti": 250,
+    "rezerveDakikaFiyati": 100,
+    "rezerveSuresi": 15,
+    "rezervasyonAcikMi": true,
+    "rezerveMi": false,
+    "indirimliMi": false,
+    "indirimOrani": null,
+    "paraBirimi": "₺",
+    "bolgeIcindeMi": true,
+    "cihazTip": "SCOOTER",
+    "sigortaAcikMi": true,
+    "sigortaDakikaUcreti": 50,
+    "helmetCount": 1,
+    "plaka": "34ABC123"
+}
+                                          </code></pre>
+                                          </div>
+                                          
 
                                         <h5>Örnek Kullanım</h5>
                                         <div class="code-block">
@@ -1691,6 +1723,127 @@ for (var scooter in scooters) {
                                         <h5 class="mt-4">getPastPackages()</h5>
                                         <p>Geçmiş BinPass paketlerini getirir.</p>
                                         <p><code>Future&lt;List&lt;PastBinPassResponseModel&gt;&gt;</code></p>
+
+<div class="code-block response-success">
+<div class="code-header">
+    <span>PastRideResponseModel</span>
+    <button class="copy-button">Kopyala</button>
+</div>
+<pre><code class="language-json">
+{
+    "kayitId": 12345,
+    "scooterId": 67890,
+    "scooterKodu": "SCT123",
+    "cihazTipi": 1,
+    "baslangicTarihSaat": "2024-03-20T14:30:00Z",
+    "bitisTarihSaat": "2024-03-20T15:00:00Z",
+    "dakikaSaniye": "30:00",
+    "indirimsizTutar": 3000,
+    "tutar": 2500,
+    "gidilenMetre": 4500,
+    "surusDegerlendirmeYildiz": 5,
+    "paraBirimi": "TRY",
+    "bP_PaketId": 789,
+    "ulke": "TR",
+    "faturaTutari": 2500,
+    "sigortaliMi": true,
+    "sigortaNetTutar": 500
+    }
+</code></pre>
+</div>
+
+<div class="code-block response-success">
+    <div class="code-header">
+    <span>PastReservationResponseModel</span>
+    <button class="copy-button">Kopyala</button>
+    </div>
+    <pre><code class="language-json">
+{
+    "kayitId": 12345,
+    "ulke": "TR",
+    "scooterKodu": "SCT123",
+    "baslangicTarihSaat": "2024-03-20T14:30:00Z",
+    "dakikaSaniye": "15:00",
+    "tutar": 1000,
+    "paraBirimi": "TRY",
+    "faturaTutari": 1000,
+    "enlem": "41.0082",
+    "boylam": "28.9784"
+}
+</code></pre>
+</div>
+
+<div class="code-block response-success">
+    <div class="code-header">
+    <span>PastPenaltiesResponseModel</span>
+    <button class="copy-button">Kopyala</button>
+    </div>
+    <pre><code class="language-json">
+{
+    "kayitId": 12345,
+    "scooterId": 67890,
+    "baslangicTarih": "2024-03-20T14:30:00Z",
+    "bitisTarih": "2024-03-20T15:30:00Z",
+    "cezaAdi": "Yasak Bölge İhlali",
+    "ulke": "TR",
+    "scooterKodu": "SCT123",
+    "tarih": "2024-03-20T14:30:00Z",
+    "tutar": 5000,
+    "paraBirimi": "TRY",
+    "enlem": "41.0082",
+    "boylam": "28.9784"
+    }
+</code></pre>
+</div>
+
+<div class="code-block response-success">
+    <div class="code-header">
+    <span>PastGiftResponseModel</span>
+    <button class="copy-button">Kopyala</button>
+    </div>
+    <pre><code class="language-json">
+{
+    "kayitId": 12345,
+    "ulke": "TR",
+    "tarih": "2024-03-20T14:30:00Z",
+    "tutar": 5000,
+    "paraBirimi": "TRY",
+    "telefonNo": "5551234567",
+    "telefonKodu": 90
+}
+</code></pre>
+</div>
+
+<div class="code-block response-success">
+    <div class="code-header">
+    <span>PastBinPassResponseModel</span>
+    <button class="copy-button">Kopyala</button>
+    </div>
+    <pre><code class="language-json">
+{
+    "kayitId": 12345,
+    "ulke": "TR",
+    "baslikTR": "Günlük BinPass",
+    "baslikENG": "Daily BinPass",
+    "baslikBG": "Дневен BinPass",
+    "baslikBS": "Dnevni BinPass",
+    "baslikRU": "Дневной BinPass",
+    "baslikMK": "Дневен BinPass",
+    "baslikARN": "BinPass Ditor",
+    "baslikNL": "Dagelijks BinPass",
+    "baslikES": "BinPass Diario",
+    "baslikCA": "BinPass Diari",
+    "baslangicTarihSaat": "2024-03-20T14:30:00Z",
+    "tutar": 5000,
+    "paraBirimi": "TRY",
+    "faturaTutari": 5000,
+    "sigortaliMi": true,
+    "acilisUcretiYuzdelikIndirim": 20
+    }
+</code></pre>
+</div>
+
+
                                     </div>
                                 </div>
                             </div>
